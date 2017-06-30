@@ -262,8 +262,8 @@ function pre_flight {
       exit 99
     fi
 
-    # Install liberasurecode-dev which will be used in the venv creation process
-    if ! grep -n ^ /etc/apt/sources.list /etc/apt/sources.list.d/* | grep -qw "backports"; then
+    # Verify the Ubuntu Trusty Backports repo enabled on host
+    if ! grep -rn ^ /etc/apt/sources.list /etc/apt/sources.list.d/ | grep -qw "backports"; then
       failure "The trusty backports repo has not been enabled on this host."
       exit 99
     fi
