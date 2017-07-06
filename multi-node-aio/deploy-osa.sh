@@ -76,8 +76,8 @@ write_osa_general_confd shared-infra_hosts infra
 # Setup logging hosts: function group_name host_type
 write_osa_general_confd log_hosts logging
 
-# Setup network hosts: function group_name host_type
-write_osa_general_confd network_hosts infra
+# Setup network hosts: function group_name infra_host_type standalone_host_type
+write_osa_network_confd network_hosts infra neutron_networks
 
 # Setup swift hosts: function group_name host_type
 write_osa_swift_proxy_confd swift-proxy_hosts swift
